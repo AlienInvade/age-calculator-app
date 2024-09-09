@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+</head>
+<body>
+  <main>
+    <div class="container">
+
+       <div class="form">
+
+        <div class="day" >
+        <label for="day"> Day 
+          <input id="day" name="day" value="" 
+            placeholder="DD" required> 
+        </label>
+        </div>
+
+        <div class="month">
+          <label for="month">
+            Month
+        <input id="month" name="month" placeholder="MM" required>
+          </label>
+        </div>
+
+        <div class="year">
+          <label for="year"> Year
+            <input id="year" name="year" placeholder="YYYY" required>
+          </label>
+      </div>
+      
+    </div>
+    
+      <div class="results">
+       <p><span id="count-years">- -</span> years</p>  
+       <p><span id="count-months">- -</span> months</p> 
+       <p><span id="count-days">- -</span> days</p>
+      </div>
+     
+    </div>
+   
+  </main>
+ 
+  
+  <div class="attribution">
+    Challenge by <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a rel="noopener" href="https://www.frontendmentor.io/profile/AlienInvade" target="_blank">AlienInvade</a>.
+  </div>
+  <script src="index.js" charset="utf-8"></script>
+</body>
+</html>

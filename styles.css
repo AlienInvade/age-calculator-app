@@ -1,0 +1,64 @@
+:root {
+    /* Primary */ 
+
+--Purple: hsl(259, 100%, 65%);
+--Light-red: hsl(0, 100%, 67%);
+
+ /* Neutral */
+
+--White: hsl(0, 0%, 100%);
+--Off-white: hsl(0, 0%, 94%);
+--Light-grey: hsl(0, 0%, 86%);
+--Smokey-grey: hsl(0, 1%, 44%);
+--Off-black: hsl(0, 0%, 8%);
+
+}
+
+
+body {
+    background-color: var(--Light-grey);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: var(--White);
+    font-size: 18px;
+    width: 600px;
+    height: 300px;
+    border-radius: 10px 10px 20px ;
+    box-shadow: 1px 1px 50px 1px var(--Light-grey);
+}
+
+
+.form {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    margin-top: 10px;
+    color: var(--Smokey-grey);
+;
+}
+
+input {
+    display: block;
+    width: 70px;
+}
+
+.results {
+    display: block;
+}
+
+.attribution { 
+    font-size: 11px;
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
