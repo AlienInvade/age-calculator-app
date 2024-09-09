@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     /* Primary */ 
 
@@ -16,6 +18,9 @@
 
 
 body {
+    font-family: 'Poppins';
+    font-size: 32px;
+    font-weight: 400i;
     background-color: var(--Light-grey);
 }
 
@@ -29,9 +34,9 @@ main {
 .container {
     background-color: var(--White);
     font-size: 18px;
-    width: 600px;
+    width: 400px;
     height: 300px;
-    border-radius: 10px 10px 20px ;
+    border-radius: 10px 10px 100px 10px;
     box-shadow: 1px 1px 50px 1px var(--Light-grey);
 }
 
@@ -42,7 +47,8 @@ main {
     width: 300px;
     margin-top: 10px;
     color: var(--Smokey-grey);
-;
+    text-transform: uppercase;
+    line-height: 1.5;
 }
 
 input {
@@ -52,6 +58,17 @@ input {
 
 .results {
     display: block;
+    padding-left: 10px;
+}
+
+p {
+    color: var(--Off-black);
+    font-weight: 700;
+}
+
+span {
+    color: var(--Purple);
+    font-weight: 700;
 }
 
 .attribution { 
