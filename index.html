@@ -12,31 +12,32 @@
 <body>
   <main>
     <div class="container">
+        <form id="formContainer">
+          <div class="form">
+            <label for="day">D a y 
+              <input id="day" name="day" value="" 
+                placeholder="DD" required>
+            </label>
+          
+              <label for="month">
+                M o n t h
+            <input id="month" name="month" placeholder="MM" required>
+              </label>
+            
+              <label for="year">Y e a r
+                <input id="year" name="year" placeholder="YYYY" required>
+              </label>
+          </div>
+          
+            <div>
+              <button type="submit" class="btn"><img src="./assets/images/icon-arrow.svg" alt="arrow"></button>
+              <hr>
+            </div>
+            
+        </form>
+     
+        
 
-       <div class="form">
-
-        <div class="day" >
-        <label for="day"> Day 
-          <input id="day" name="day" value="" 
-            placeholder="DD" required> 
-        </label>
-        </div>
-
-        <div class="month">
-          <label for="month">
-            Month
-        <input id="month" name="month" placeholder="MM" required>
-          </label>
-        </div>
-
-        <div class="year">
-          <label for="year"> Year
-            <input id="year" name="year" placeholder="YYYY" required>
-          </label>
-      </div>
-      
-    </div>
-    
       <div class="results">
        <p><span id="count-years">- -</span> years</p>  
        <p><span id="count-months">- -</span> months</p> 
