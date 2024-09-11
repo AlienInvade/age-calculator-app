@@ -35,8 +35,8 @@ main {
     background-color: var(--White);
     font-size: 10px;
     font-weight: 700;
-    width: 500px;
-    height: 400px;
+    width: 600px;
+    height: 500px;
     border-radius: 10px 10px 100px 10px;
     box-shadow: 1px 1px 50px 1px var(--Light-grey);
 }
@@ -45,7 +45,7 @@ input {
     display: block;
     width: 90px;
     height: 40px;
-    margin-right: 15px;
+    margin-right: 20px;
     padding: 1px 1px 1px 10px;
     font-size: 18px;
     font-weight: 700;
@@ -64,7 +64,7 @@ input {
     display: flex;
     justify-content: space-around;
     width: 300px;
-    margin-top: 30px;
+    margin-top: 50px;
     padding-left: 45px;
     color: var(--Smokey-grey);
     text-transform: uppercase;
@@ -85,15 +85,15 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     background-color: var(--Purple);
     border: none;
     z-index: 1;
     position: absolute;
-    left: 58%;
-    top: 39%;
+    left: 58.7%;
+    top: 34.5%;
 }
 
 .btn:hover {
@@ -103,7 +103,8 @@ hr {
 
 .results {
     height: 100%;
-    margin-left: 40px;
+    margin-left: 60px;
+    margin-top: 50px;
 }
 
 p {
