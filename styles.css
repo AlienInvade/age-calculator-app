@@ -79,6 +79,7 @@ hr {
     height: 2px;
     background-color: var(--Light-grey);
     border: none;
+    position: relative;
 }
 
 .btn {
@@ -92,8 +93,8 @@ hr {
     border: none;
     z-index: 1;
     position: absolute;
-    left: 58.7%;
-    top: 34.5%;
+    left: 1110px;
+    top: 300px;
 }
 
 .btn:hover {
@@ -129,5 +130,35 @@ span {
 
 
 @media (max-width: 768px) {
+    .container {
+        width: 350px;
+    }
     
+    .form {
+        padding-left: 25px;
+    }
+
+    input {
+        width: 80px;
+        margin-right: 10px;
+    }
+
+    hr {
+        margin-top: 75px;
+    }
+
+    .btn {
+        width: 70px;
+        height: 70px;
+        left: 195px;
+        top: 216.5px;
+    }
+
+    .results {
+        margin-left: 30px;
+    }
+
+    p {
+        font-size: 3rem;
+    }
 }
