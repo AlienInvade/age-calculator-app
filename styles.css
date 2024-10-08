@@ -61,7 +61,7 @@ input {
     font-weight: bold;
 }
 
-.form {
+.formContainer {
     display: flex;
     justify-content: space-around;
     width: 300px;
@@ -133,7 +133,7 @@ span {
         width: 350px;
     }
     
-    .form {
+    .formContainer {
         padding-left: 25px;
     }
 
@@ -143,12 +143,12 @@ span {
     }
 
     hr {
-        margin-top: 75px;
+        margin-top: 65px;
     }
 
     .btn {
         left: 140px;
-        top: 155px;
+        top: 141px;
         width: 70px;
         height: 70px;
     }

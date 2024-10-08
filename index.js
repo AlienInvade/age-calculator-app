@@ -1,5 +1,5 @@
 // listens to a click on th ebutton then runs the code that is nested
-$(".btn").on("click", function() {
+$("#form").on("submit", function(event) {
     const dat = new Date();
     let month = dat.getMonth();
     let year = dat.getFullYear();
@@ -9,6 +9,7 @@ $(".btn").on("click", function() {
     let inputYear = document.getElementById("year").value;
     let inputMonth = document.getElementById("month").value;
     let inputDays = document.getElementById("day").value;
+    const form = document.getElementById("form");
     // validates inputs 
     if (inputDays.length > 2 ) {
         alert("Enter number");
@@ -20,10 +21,11 @@ $(".btn").on("click", function() {
     // calculates how old you are by age, month and day
         let resultYear = year - inputYear;
         let resultMonth = month - inputMonth;
-        let resultDay = day - inputDays;
+        let resultDay = (day - inputDays) * -1;
         $("#count-years").text(`${resultYear}`);
         $("#count-months").text(`${resultMonth}`);
         $("#count-days").text(`${resultDay}`);
+        event.preventDefault();
 });
    
 
