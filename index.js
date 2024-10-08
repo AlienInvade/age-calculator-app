@@ -1,21 +1,15 @@
-/*const inputYears = document.getElementById('year').value;
-const inputMonths = document.getElementById('month').value;
-const inputDays = document.getElementById('day').value;
-const button = document.getElementsByClassName('btn');
-*/
-
-
-
+// listens to a click on th ebutton then runs the code that is nested
 $(".btn").on("click", function() {
     const dat = new Date();
     let month = dat.getMonth();
     let year = dat.getFullYear();
     let day = dat.getDate();
 
-
+    // stores the inputs into variables, makes easy to manipulate
     let inputYear = document.getElementById("year").value;
     let inputMonth = document.getElementById("month").value;
     let inputDays = document.getElementById("day").value;
+    // validates inputs 
     if (inputDays.length > 2 ) {
         alert("Enter number");
     } else if (inputMonth.length > 2) {
@@ -23,6 +17,7 @@ $(".btn").on("click", function() {
     } else if (inputYear.length > 4 || inputYear.length < 4) {
         return "wrong input";
     }
+    // calculates how old you are by age, month and day
         let resultYear = year - inputYear;
         let resultMonth = month - inputMonth;
         let resultDay = day - inputDays;
