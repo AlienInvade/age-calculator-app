@@ -29,7 +29,6 @@ main {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    position: relative;
 }
 
 .container {
@@ -40,6 +39,7 @@ main {
     height: 500px;
     border-radius: 10px 10px 100px 10px;
     box-shadow: 1px 1px 50px 1px var(--Light-grey);
+    position: relative;
 }
 
 input {
@@ -70,7 +70,6 @@ input {
     color: var(--Smokey-grey);
     text-transform: uppercase;
     line-height: 1.5;
-    position: relative;
 }
 
 
@@ -80,7 +79,6 @@ hr {
     height: 2px;
     background-color: var(--Light-grey);
     border: none;
-    position: relative;
 }
 
 .btn {
@@ -94,8 +92,8 @@ hr {
     border: none;
     z-index: 1;
     position: absolute;
-    left: 58.7%;
-    top: 295px;
+    left: 462px;
+    top: 105px;
 }
 
 .btn:hover {
@@ -146,6 +144,13 @@ span {
 
     hr {
         margin-top: 75px;
+    }
+
+    .btn {
+        left: 140px;
+        top: 155px;
+        width: 70px;
+        height: 70px;
     }
 
     .results {
