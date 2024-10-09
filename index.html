@@ -14,17 +14,19 @@
     <div class="container">
         <form id="form" name="file-form">
           <div class="formContainer">
-            <label for="day">D a y 
+            <label for="day"><span class="heading">D a y </span>
               <input id="day" name="day" placeholder="DD" required>
+              <span class="error-day error">This field is required</span>
             </label>
           
-              <label for="month">
-                M o n t h
-            <input id="month" name="month" placeholder="MM" required>
+              <label for="month"><span class="heading">M o n t h</span> 
+              <input id="month" name="month" placeholder="MM" required>
+              <span class="error-month error">This field is required</span>
               </label>
             
-              <label for="year">Y e a r
+              <label for="year"> <span class="heading">Y e a r</span> 
                 <input id="year" name="year" placeholder="YYYY" required>
+                <span class="error-year error">This field is required</span>
               </label>
           </div>
           
@@ -38,9 +40,9 @@
         
 
       <div class="results">
-       <p><span id="count-years">- -</span> years</p>  
-       <p><span id="count-months">- -</span> months</p> 
-       <p><span id="count-days">- -</span> days</p>
+       <p><span id="count-years" class="age">- -</span> years</p>  
+       <p><span id="count-months" class="age">- -</span> months</p> 
+       <p><span id="count-days" class="age">- -</span> days</p>
       </div>
      
     </div>
