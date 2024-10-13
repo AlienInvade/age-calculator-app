@@ -19,6 +19,31 @@ $("#form").on("submit", function(event) {
         $(".heading").css("color", "red");
         event.preventDefault();
     } 
+
+    if (inputDays === "") {
+        $(".error-day").text("This field is required").toggle();
+        $("input").css("border-color", "red");
+        $("input").css("border-width", "1px")
+        $(".heading").css("color", "red");
+        event.preventDefault();
+    }
+
+    if (inputMonth === "") {
+        $(".error-day").text("This field is required").toggle();
+        $("input").css("border-color", "red");
+        $("input").css("border-width", "1px")
+        $(".heading").css("color", "red");
+        event.preventDefault();
+    }
+
+    if (inputYear === "") {
+        $(".error-day").text("This field is required").toggle();
+        $("input").css("border-color", "red");
+        $("input").css("border-width", "1px")
+        $(".heading").css("color", "red");
+        event.preventDefault();
+    }
+
     if (inputMonth.length > 2 || inputMonth > 12) {
         $(".error-month").text("Must be a valid month").toggle();
         $("input").css("border-color", "red");
@@ -26,7 +51,7 @@ $("#form").on("submit", function(event) {
         event.preventDefault();
     }
     if (inputYear.length > 4 || inputYear.length < 4) {
-        $(".error-year").text("Must be a valid month").toggle();
+        $(".error-year").text("Must be a in the past").toggle();
         $("input").css("border-color", "red");
         $("input").css("border-width", "1px")
         event.preventDefault();
