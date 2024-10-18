@@ -1,76 +1,120 @@
 // listens to a click on th ebutton then runs the code that is nested
 $("#form").on("submit", function(event) {
-    const dat = new Date();
-    let month = dat.getMonth();
-    let year = dat.getFullYear();
-    let day = dat.getDate();
 
+    event.reset();
     // stores the inputs into variables, makes easy to manipulate
     let inputYear = document.getElementById("year").value;
     let inputMonth = document.getElementById("month").value;
     let inputDays = document.getElementById("day").value;
     const form = document.getElementById("form");
     // validates inputs 
-
-    if (inputDays.length > 2  || inputDays > 31) {
-        $(".error-day").text("Must be a valid date").toggle();
-        $("input").css("border-color", "red");
-        $("input").css("border-width", "1px")
-        $(".heading").css("color", "red");
-        event.preventDefault();
-    } 
-
-    if (inputDays === "") {
-        $(".error-day").text("This field is required").toggle();
-        $("input").css("border-color", "red");
-        $("input").css("border-width", "1px")
-        $(".heading").css("color", "red");
-        event.preventDefault();
+    
+    if (error(inputYear, inputMonth, inputDays)) {
+        age(inputYear, inputMonth, inputDays);
+    } else {
+        return false;
     }
+   
 
-    if (inputMonth === "") {
-        $(".error-day").text("This field is required").toggle();
-        $("input").css("border-color", "red");
-        $("input").css("border-width", "1px")
-        $(".heading").css("color", "red");
-        event.preventDefault();
-    }
-
-    if (inputYear === "") {
-        $(".error-day").text("This field is required").toggle();
-        $("input").css("border-color", "red");
-        $("input").css("border-width", "1px")
-        $(".heading").css("color", "red");
-        event.preventDefault();
-    }
-
-    if (inputMonth.length > 2 || inputMonth > 12) {
-        $(".error-month").text("Must be a valid month").toggle();
-        $("input").css("border-color", "red");
-        $("input").css("border-width", "1px")
-        event.preventDefault();
-    }
-    if (inputYear.length > 4 || inputYear.length < 4) {
-        $(".error-year").text("Must be a in the past").toggle();
-        $("input").css("border-color", "red");
-        $("input").css("border-width", "1px")
-        event.preventDefault();
-    }
-    if (inputYear > year) {
-        $(".error-year").text("Must be in the past").toggle();
-        $("input").css("border-color", "red");
-        $("input").css("border-width", "1px")
-        event.preventDefault();
-        return;
-        }
     // calculates how old you are by age, month and day
-        let resultYear = year - inputYear;
-        let resultMonth = month - inputMonth;
-        let resultDay = day - inputDays;
-        $("#count-years").text(`${resultYear}`);
-        $("#count-months").text(`${resultMonth}`);
-        $("#count-days").text(`${resultDay}`);
+    function age (inputYear, inputMonth, inputDays) {
+        const date = new Date();
+        const birthDate = new Date(inputYear, inputMonth - 1, inputDays);
+
+        let year = date.getFullYear() - birthDate.getFullYear();
+        let month = date.getMonth() - birthDate.getMonth();
+        let days = date.getDate() - birthDate.getDate();
+
+        if (month < 0) {
+            year--;
+            month += 12;
+        }
+
+        if (days < 0) {
+            month--;
+            const lastMonthDate = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                0
+            );
+            days += lastMonthDate.getDate();
+
+            if (month < 0) {
+                year--;
+                month += 12;
+            }
+        }
+        $("#count-years").text(`${year}`);
+        $("#count-months").text(`${month}`);
+        $("#count-days").text(`${days}`);
         event.preventDefault();
+
+    }
+       
+
+
+         function error(inputYear, inputMonth, inputDays) {
+            let isValid = true;
+            let currentYear = new Date().getFullYear();
+            let lastDayOfMonth = new Date(inputYear, inputMonth, 0).getDate();
+
+            if (inputDays > lastDayOfMonth  || inputDays <= 0) {
+                $(".error-day").text("Must be a valid day").toggle();
+                $("input").css("border-color", "red");
+                $("input").css("border-width", "1px");
+                $(".heading").css("color", "red");
+                isValid = false;
+                event.preventDefault()
+            } 
+
+            if (inputMonth < 1 || inputMonth > 12) {
+                $(".error-month").text("Must be a valid month").toggle();
+                $("input").css("border-color", "red");
+                $("input").css("border-width", "1px");
+                isValid = false;
+                event.preventDefault()
+            }
+
+            if (inputYear > currentYear) {
+                $(".error-year").text("Must be in the past").toggle();
+                $("input").css("border-color", "red");
+                $("input").css("border-width", "1px");
+                isValid = false;
+                event.preventDefault()  
+            } else if (year < 100) {
+                $(".error-year").text("Must be a valid year").toggle();
+                $("input").css("border-color", "red");
+                $("input").css("border-width", "1px");
+                isValid = false;
+                event.preventDefault()
+                }
+
+            if (inputDays === "") {
+                    $(".error-day").text("This field is required").toggle();
+                    $("input").css("border-color", "red");
+                    $("input").css("border-width", "1px");
+                    isValid = false;
+                    event.preventDefault()
+            }
+            
+            if (inputMonth === "") {
+                    $(".error-month").text("This field is required").toggle();
+                    $("input").css("border-color", "red");
+                    $("input").css("border-width", "1px");
+                    
+                    isValid = false;
+                    event.preventDefault()
+            }
+            
+            if (inputYear === "") {
+                $(".error-year").text("This field is required").toggle();
+                $("input").css("border-color", "red");
+                $("input").css("border-width", "1px");
+                isValid = false;
+                event.preventDefault()
+            }
+            return isValid;
+        }
 });
    
 
