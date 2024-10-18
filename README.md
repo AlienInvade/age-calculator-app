@@ -25,7 +25,7 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
+- Javascript
 - CSS Variables
 - jQuery
 

@@ -1,7 +1,6 @@
 // listens to a click on th ebutton then runs the code that is nested
 $("#form").on("submit", function(event) {
 
-    event.reset();
     // stores the inputs into variables, makes easy to manipulate
     let inputYear = document.getElementById("year").value;
     let inputMonth = document.getElementById("month").value;
@@ -9,8 +8,9 @@ $("#form").on("submit", function(event) {
     const form = document.getElementById("form");
     // validates inputs 
     
-    if (error(inputYear, inputMonth, inputDays)) {
+    if (error(inputYear, inputMonth, inputDays)) { 
         age(inputYear, inputMonth, inputDays);
+        resetError();
     } else {
         return false;
     }
@@ -59,62 +59,70 @@ $("#form").on("submit", function(event) {
             let lastDayOfMonth = new Date(inputYear, inputMonth, 0).getDate();
 
             if (inputDays > lastDayOfMonth  || inputDays <= 0) {
-                $(".error-day").text("Must be a valid day").toggle();
-                $("input").css("border-color", "red");
-                $("input").css("border-width", "1px");
-                $(".heading").css("color", "red");
+                $(".error-day").text("Must be a valid day");
+                inputError();
                 isValid = false;
                 event.preventDefault()
             } 
 
             if (inputMonth < 1 || inputMonth > 12) {
-                $(".error-month").text("Must be a valid month").toggle();
-                $("input").css("border-color", "red");
-                $("input").css("border-width", "1px");
+                $(".error-month").text("Must be a valid month");
+                inputError();
                 isValid = false;
                 event.preventDefault()
             }
 
             if (inputYear > currentYear) {
-                $(".error-year").text("Must be in the past").toggle();
-                $("input").css("border-color", "red");
-                $("input").css("border-width", "1px");
+                $(".error-year").text("Must be in the past");
+                inputError();
                 isValid = false;
                 event.preventDefault()  
             } else if (year < 100) {
-                $(".error-year").text("Must be a valid year").toggle();
-                $("input").css("border-color", "red");
-                $("input").css("border-width", "1px");
+                $(".error-year").text("Must be a valid year");
+                inputError();
                 isValid = false;
                 event.preventDefault()
                 }
 
             if (inputDays === "") {
-                    $(".error-day").text("This field is required").toggle();
-                    $("input").css("border-color", "red");
-                    $("input").css("border-width", "1px");
+                    $(".error-day").text("This field is required");
+                    inputError();
                     isValid = false;
                     event.preventDefault()
             }
             
             if (inputMonth === "") {
-                    $(".error-month").text("This field is required").toggle();
-                    $("input").css("border-color", "red");
-                    $("input").css("border-width", "1px");
-                    
+                    $(".error-month").text("This field is required");
+                    inputError();
                     isValid = false;
                     event.preventDefault()
             }
             
             if (inputYear === "") {
-                $(".error-year").text("This field is required").toggle();
-                $("input").css("border-color", "red");
-                $("input").css("border-width", "1px");
+                $(".error-year").text("This field is required");
+                inputError();
                 isValid = false;
                 event.preventDefault()
             }
             return isValid;
         }
+
+        function inputError() {
+            $(".error").css("display", "inline-block")
+            $("input").css("border-color", "red");
+            $("input").css("border-width", "1px");
+            $(".heading").css("color", "red");
+            $(".btn").css("top", "145px");
+        }
+
+        function resetError() {
+            $(".error").css("display", "none")
+            $("input").css("border-color", "hsl(0, 0%, 86%)");
+            $("input").css("border-width", "1px");
+            $(".heading").css("color", "hsl(0, 1%, 44%)");
+            $(".btn").css("top", "135px");
+        }
+
 });
    
 

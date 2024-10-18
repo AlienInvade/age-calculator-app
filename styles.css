@@ -28,6 +28,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
 }
 
@@ -152,6 +153,10 @@ p {
 
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+.attribution a:hover {
+    cursor: pointer;
 }
 
 
