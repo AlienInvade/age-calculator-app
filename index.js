@@ -12,7 +12,7 @@ $("#form").on("submit", function(event) {
         age(inputYear, inputMonth, inputDays);
         resetError();
     } else {
-        return false;
+      inputError();
     }
    
 
@@ -60,49 +60,41 @@ $("#form").on("submit", function(event) {
 
             if (inputDays > lastDayOfMonth  || inputDays <= 0) {
                 $(".error-day").text("Must be a valid day");
-                inputError();
                 isValid = false;
-                event.preventDefault()
             } 
 
             if (inputMonth < 1 || inputMonth > 12) {
                 $(".error-month").text("Must be a valid month");
-                inputError();
                 isValid = false;
-                event.preventDefault()
+
             }
 
             if (inputYear > currentYear) {
                 $(".error-year").text("Must be in the past");
-                inputError();
+               
                 isValid = false;
                 event.preventDefault()  
             } else if (year < 100) {
                 $(".error-year").text("Must be a valid year");
-                inputError();
                 isValid = false;
-                event.preventDefault()
                 }
 
             if (inputDays === "") {
                     $(".error-day").text("This field is required");
-                    inputError();
+                    
                     isValid = false;
                     event.preventDefault()
             }
             
             if (inputMonth === "") {
                     $(".error-month").text("This field is required");
-                    inputError();
                     isValid = false;
-                    event.preventDefault()
+
             }
             
             if (inputYear === "") {
                 $(".error-year").text("This field is required");
-                inputError();
                 isValid = false;
-                event.preventDefault()
             }
             return isValid;
         }
@@ -113,6 +105,7 @@ $("#form").on("submit", function(event) {
             $("input").css("border-width", "1px");
             $(".heading").css("color", "red");
             $(".btn").css("top", "145px");
+            event.preventDefault();
         }
 
         function resetError() {
